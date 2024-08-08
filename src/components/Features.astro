@@ -1,0 +1,96 @@
+<section id="features" class="flex justify-center bg-gray-100">
+    <div class="flex flex-col gap-16 px-4 py-16 md:px-16 lg:px-32 md:py-16 lg:py-32 lg:pt-28 justify-center items-center max-w-7xl">
+        <!-- Features title -->
+        <div class="text-center">
+            <h2 class="text-5xl md:text-6xl lg:text-7xl font-extrabold text-black bg-clip-text">
+              <span class="text-red-800">F</span>eatures
+            </h2>
+            <div class="w-24 h-1 bg-gradient-to-r from-red-600 to-red-800 mx-auto rounded-full"></div>
+        </div>
+            <!-- Feature 1 -->
+            <div class="flex flex-col sm:flex-row gap-8 lg:gap-20 w-full feature-container">
+                <!-- Image -->
+                <div class="flex justify-center items-center lg:w-1/2 perspective-1000 feature-image">
+                    <div class="border-[10px] border-gray-700 rounded-lg bg-gray-800 relative transform transition-all duration-500 hover:rotate-y-6 hover:scale-105">
+                        <div class="w-full h-full bg-black flex justify-center items-center rounded-lg overflow-hidden">
+                            <img src="/projects.png" alt="Your Image" class="w-full h-auto object-cover" />
+                        </div>
+                    </div>
+                </div>
+                <!-- Text -->
+                <div class="lg:w-1/2 flex flex-col justify-center items-start space-y-4 feature-text">
+                    <h1 class="text-4xl font-bold text-gray-800">Manage Projects</h1>
+                    <p class="text-lg text-gray-600">
+                        Hikerdo simplifies team and project management. Create teams, streamline communication, oversee tasks, set milestones, and track progress—all in one intuitive platform for seamless coordination and achieving goals.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Feature 2 -->
+            <div class="flex flex-col sm:flex-row-reverse gap-8 lg:gap-20 w-full feature-container">
+                <!-- Image -->
+                <div class="flex justify-center items-center lg:w-1/2  perspective-1000 feature-image">
+                    <div class="border-[10px] border-gray-700 rounded-lg bg-gray-800 relative transform transition-all duration-500 hover:rotate-y-6 hover:scale-105">
+                        <div class="w-full h-full bg-black flex justify-center items-center rounded-lg overflow-hidden">
+                            <img src="/teams.png" alt="Your Image" class="w-full h-auto object-cover" />
+                        </div>
+                    </div>
+                </div>
+                <!-- Text -->
+                <div class="lg:w-1/2 flex flex-col justify-center items-start space-y-4 feature-text">
+                    <h1 class="text-4xl font-bold text-gray-800">Manage Teams</h1>
+                    <p class="text-lg text-gray-600">
+                        Hikerdo makes task management effortless. Add, assign, and update tasks with our drag-and-drop interface. Efficiently delegate tasks, set deadlines, and monitor progress in real-time for lgooth collaboration and clear accountability.
+                    </p>
+                </div>
+            </div>
+    </div>
+</section>
+
+<style>
+    .feature-container {
+        opacity: 0;
+        transform: translateY(50px);
+        transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    .feature-container.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    .feature-image {
+        opacity: 0;
+        transform: translateX(-50px);
+        transition: opacity 0.5s ease 0.2s, transform 0.5s ease 0.2s;
+    }
+    .feature-container.visible .feature-image {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    .feature-text {
+        opacity: 0;
+        transform: translateX(50px);
+        transition: opacity 0.5s ease 0.4s, transform 0.5s ease 0.4s;
+    }
+    .feature-container.visible .feature-text {
+        opacity: 1;
+        transform: translateX(0);
+    }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        document.querySelectorAll('.feature-container').forEach(container => {
+            observer.observe(container);
+        });
+    });
+</script>
