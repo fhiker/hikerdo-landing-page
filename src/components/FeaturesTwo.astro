@@ -1,0 +1,86 @@
+<section id="features" class="flex justify-center bg-gray-200">
+    <div class="flex flex-col gap-16 px-4 py-16 md:px-16 lg:px-32 md:py-16 lg:py-32 justify-center items-center max-w-7xl">
+            <!-- Feature 3 -->
+        <div class="flex flex-col sm:flex-row gap-8 lg:gap-20 w-full feature-container">
+            <!-- Image -->
+            <div class="flex justify-center items-center lg:w-1/2 perspective-1000 feature-image">                    <div class="border-[10px] border-gray-700 rounded-lg bg-gray-800 relative transform transition-all duration-500 hover:rotate-y-6 hover:scale-105">
+                    <div class="w-full h-full bg-black flex justify-center items-center rounded-lg overflow-hidden">
+                        <img src="/task-edit.png" alt="Your Image" class="w-full h-auto object-cover" />
+                    </div>
+                </div>
+            </div>
+            <!-- Text -->
+            <div class="lg:w-1/2 flex flex-col justify-center items-start space-y-4 feature-text">
+                <h1 class="text-4xl font-bold text-gray-900">Create and Edit Tasks</h1>
+                <p class="text-lg text-gray-600">
+                    With Hikerdo, creating and editing tasks is effortless. Our drag-and-drop interface allows users to quickly add new tasks, assign due dates and assign people. Need to make changes? Simply drag tasks to rearrange priorities or update details with one click. Hikerdo ensures that task management is flexible and adaptable to meet your project's evolving needs.
+                </p>
+            </div>
+        </div>
+            
+        <!-- Feature 4 -->
+        <div class="flex flex-col sm:flex-row-reverse gap-8 lg:gap-20 w-full feature-container">
+            <!-- Image -->
+            <div class="flex justify-center items-center lg:w-1/2  perspective-1000 feature-image">
+                <div class="border-[10px] border-gray-700 rounded-lg bg-gray-800 relative transform transition-all duration-500 hover:rotate-y-6 hover:scale-105">
+                    <div class="w-full h-full bg-black flex justify-center items-center rounded-lg overflow-hidden">
+                    <img src="/assigned.png" alt="Your Image" class="w-full h-auto object-cover" />                        </div>
+                </div>
+            </div>
+            <!-- Text -->
+            <div class="lg:w-1/2 flex flex-col justify-center items-start space-y-4 feature-text">
+                <h1 class="text-4xl font-bold text-gray-900">Assign Tasks</h1>
+                <p class="text-lg text-gray-600">
+                    Efficient task delegation is key to project success, and Hikerdo makes it simple. Assign tasks to team members directly from the task board, ensuring clear responsibilities and accountability. With the ability to set deadlines and monitor progress in real-time, Hikerdo facilitates smooth collaboration and effective task distribution across your team.
+                </p>
+            </div>
+        </div>
+</section>
+
+<style>
+    .feature-container {
+        opacity: 0;
+        transform: translateY(50px);
+        transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    .feature-container.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    .feature-image {
+        opacity: 0;
+        transform: translateX(-50px);
+        transition: opacity 0.5s ease 0.2s, transform 0.5s ease 0.2s;
+    }
+    .feature-container.visible .feature-image {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    .feature-text {
+        opacity: 0;
+        transform: translateX(50px);
+        transition: opacity 0.5s ease 0.4s, transform 0.5s ease 0.4s;
+    }
+    .feature-container.visible .feature-text {
+        opacity: 1;
+        transform: translateX(0);
+    }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        document.querySelectorAll('.feature-container').forEach(container => {
+            observer.observe(container);
+        });
+    });
+</script>

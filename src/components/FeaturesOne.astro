@@ -1,12 +1,11 @@
+---
+import FeatureTitle from "./FeatureTitle.astro";
+---
+
 <section id="features" class="flex justify-center bg-gray-100">
     <div class="flex flex-col gap-16 px-4 py-16 md:px-16 lg:px-32 md:py-16 lg:py-32 lg:pt-28 justify-center items-center max-w-7xl">
         <!-- Features title -->
-        <div class="text-center">
-            <h2 class="text-5xl md:text-6xl lg:text-7xl font-extrabold text-black bg-clip-text">
-              <span class="text-red-800">F</span>eatures
-            </h2>
-            <div class="w-24 h-1 bg-gradient-to-r from-red-600 to-red-800 mx-auto rounded-full"></div>
-        </div>
+        <FeatureTitle/>
             <!-- Feature 1 -->
             <div class="flex flex-col sm:flex-row gap-8 lg:gap-20 w-full feature-container">
                 <!-- Image -->
@@ -19,7 +18,7 @@
                 </div>
                 <!-- Text -->
                 <div class="lg:w-1/2 flex flex-col justify-center items-start space-y-4 feature-text">
-                    <h1 class="text-4xl font-bold text-gray-800">Manage Projects</h1>
+                    <h1 class="text-4xl font-bold text-gray-900">Manage Projects</h1>
                     <p class="text-lg text-gray-600">
                         Hikerdo simplifies team and project management. Create teams, streamline communication, oversee tasks, set milestones, and track progress—all in one intuitive platform for seamless coordination and achieving goals.
                     </p>
@@ -38,7 +37,7 @@
                 </div>
                 <!-- Text -->
                 <div class="lg:w-1/2 flex flex-col justify-center items-start space-y-4 feature-text">
-                    <h1 class="text-4xl font-bold text-gray-800">Manage Teams</h1>
+                    <h1 class="text-4xl font-bold text-gray-900">Manage Teams</h1>
                     <p class="text-lg text-gray-600">
                         Hikerdo makes task management effortless. Add, assign, and update tasks with our drag-and-drop interface. Efficiently delegate tasks, set deadlines, and monitor progress in real-time for lgooth collaboration and clear accountability.
                     </p>
